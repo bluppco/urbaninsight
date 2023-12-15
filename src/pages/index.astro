@@ -28,10 +28,12 @@ const data = [ "Broad.jpg", "global.jpg", "GOODG.jpg" ]
     description="Web Development Agency. Innovative user-focused websites for organizations making a difference. Website Development and Design, Digital Strategy, Web Applications."
     image=""
 >
-<pre>{JSON.stringify(runtime.env)}</pre>
-    <Header />
-    <section class="relative">
+    <!-- <pre>{JSON.stringify(runtime.env)}</pre> -->
+    <section class="bg-[url('/images/Hero-Waves.png')] bg-contain bg-no-repeat">
+        <Header />
         <Masthead />
+    </section>
+    <section class="relative">
         <OurApproach />
     </section>
     <SliderJSX data={ data } client:load />
