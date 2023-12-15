@@ -1,6 +1,6 @@
 ---
-
+const { right, leading } = Astro.props
 ---
-<h2 class="font-trumpsoftpro text-4xl text-urbaninsight_black uppercase">
+<h2 class={` ${ right ? "text-right" : "text-left" } ${ leading ? "leading-snug" : "leading-[56px]" } font-trumpsoftpro text-[64px] text-urbaninsight_black uppercase`}>
     <slot />
 </h2>
