@@ -18,3 +18,29 @@
 .carousel.carousel-slider{
     overflow: inherit !important;
 }
+
+.markdown p {
+
+    font-size: 20px;
+    color: #5E6D89;
+    padding: 10px 0 10px 0;
+
+}
+
+.markdown h2 {
+
+    font-size: 42px;
+    font-weight: 700;
+    color: #30384C;
+    margin-top: 10px;
+
+}
+
+.markdown h3 {
+
+    font-size: 32px;
+    font-weight: 700;
+    color: #30384C;
+    margin-top: 10px;
+
+}
