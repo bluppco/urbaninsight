@@ -1,0 +1,44 @@
+---
+import ArrowButton from "../../../atoms/ArrowButton.astro"
+import ArticlesItem from "./ArticlesItem.astro"
+---
+
+<section class="grid grid-cols-5 gap-20 max-w-5xl mx-auto pb-32">
+    <div class="col-span-2 flex flex-col justify-between p-10 bg-gray-50 rounded-lg shadow-2xl shadow-urbaninsight_slate">
+        <div class="space-y-8">
+            <p class="uppercase font-bold text-urbaninsight_light_gray font-open_sans">Web Development</p>
+            <p class="text-[28px] text-urbaninsight_black font-bold font-open_sans">The Model Website Redesign RFP Template</p>
+        </div>
+        <ArrowButton>Read More</ArrowButton>
+    </div>
+    <div class="col-span-3 space-y-14 py-10 pr-20">
+        <ArticlesItem
+            heading="Drupal"
+            title="Drupal Migration Services: Must Knows"
+            href=""
+        />
+        <ArticlesItem
+            heading="Drupal"
+            title="Evaluating Drupal Pros and Cons: Is It the Ideal CMS for Your Website?"
+            href=""
+        />
+        <ArticlesItem
+            heading="Drupal"
+            title="Drupal Website Audit: A Checklist"
+            href=""
+        />
+    </div>
+</section>
+<div class="flex items-center gap-4">
+    <div class="bg-urbaninsight_light_gray h-[1px] w-[1020px] ml-32 text-sm"></div>
+    <div class="flex gap-1 items-center group cursor-pointer">
+        <div class="font-open_sans font-bold text-urbaninsight_light_gray uppercase">View all articles</div>
+        <div class="group-hover:ml-2 transition-all duration-300">
+            <img
+                src="/icons/right_arrow_gray.svg"
+                alt=""
+                class="w-6 aspect-video"
+            />
+        </div>
+    </div>
+</div>

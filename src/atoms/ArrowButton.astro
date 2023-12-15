@@ -1,0 +1,15 @@
+---
+const { href, title } = Astro.props
+---
+<a href={ href } class="flex gap-4 group cursor-pointer">
+    <p class="text-urbaninsight_red uppercase font-bold text-sm">
+        <slot />
+    </p>
+    <div class="w-4 aspect-video group-hover:ml-2 transition-all duration-300">
+        <img
+            src="/icons/right_arrow.svg"
+            alt=""
+            class="w-full h-full"
+        />
+    </div>
+</a>
