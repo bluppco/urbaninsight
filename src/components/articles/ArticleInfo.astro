@@ -1,15 +1,19 @@
 ---
+// CUSTOM STYLES
+import "../../styles/custom.css"
+
 // IMPORTING ATOMS
 import H1 from "../../atoms/H1.astro"
-
+import { marked } from 'marked';
 const {
 
-    date,
-    title,
-    src,
     alt,
+    body,
+    date,
+    designation,
     name,
-    designation
+    src,
+    title,
 
 } = Astro.props
 ---
@@ -31,5 +35,8 @@ const {
             <p class="text-lg text-urbaninsight_black font-open_sans font-semibold">{ designation }</p>
         </div>
     </div>
-    <div class="h-[2px] bg-urbaninsight_red w-24"></div>
+    <div class="h-[2px] bg-urbaninsight_red w-24"/>
+    <section class="marked">
+        <p set:html={ marked.parse( body ) }/>
+    </section>
 </section>

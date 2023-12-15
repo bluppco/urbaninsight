@@ -1,10 +1,16 @@
 ---
+import { endpointFetch } from "../../functions/endpoint"
+const runtime = Astro.locals.runtime;
+const endpoint = endpointFetch( runtime.env.ENVIRONMENT )
+const { slug } = Astro.params
+const data = await fetch( endpoint + "/article/" + slug )
+const data_json = await data.json()
+const article = data_json.data
+// console.log( data_json )
+
 // LAYOUTS
 import Layout from "../../layouts/Layout.astro"
 import Container from "../../layouts/Container.astro"
-
-// CUSTOM STYLES
-import "../../styles/custom.css"
 
 // COMPONENTS
 import Header from "../../components/Header"
@@ -22,11 +28,12 @@ import RecentArticles from "../../components/articles/RecentArticles.astro"
     <section class="container max-w-4xl mx-auto">
         <ArticleInfo
             date="February, 2023"
-            title="How Tessitura Ticketing Software Helps Cultural Arts Organizations Increase Revenue"
+            title={ article.title }
             src="/images/Broad.jpg"
             alt=""
             name="Josh Skelly"
             designation="Chief Executive Officer"
+            body={ article.md }
         />
     </section>
     <section class="py-10">
