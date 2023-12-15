@@ -10,6 +10,7 @@
 .carousel.carousel-slider{
     overflow: inherit !important;
 }
+
 .marked p{
 
     @apply text-xl my-2 text-[#5E6D89] font-open_sans !important;
