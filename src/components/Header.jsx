@@ -27,13 +27,6 @@ const Header = ( props ) => {
                             />
                         </a>
                     </div>
-                    <div className={` ${ dark ? "block" : "hidden" } w-64 aspect-video`}>
-                        <img
-                            src="/logos/ui_logo.svg"
-                            alt=""
-                            className="w-full h-full"
-                        />
-                    </div>
                     <div className="flex gap-10 items-center">
                         <ul className={` ${ dark ? "text-black" : "text-white" } flex`}>
                             <HeaderItemJSX>What we do</HeaderItemJSX>
