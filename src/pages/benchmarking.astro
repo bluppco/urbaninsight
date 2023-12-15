@@ -1,0 +1,22 @@
+---
+// LAYOUTS
+import Layout from "../layouts/Layout.astro"
+
+// CUSTOM STYLES
+import "../styles/custom.css"
+
+// COMPONENTS
+import HeaderBanner from "../components/common/HeaderBanner.astro"
+---
+<Layout
+    title="Top Rated Web Development Agency | Urban Insight"
+    description="Web Development Agency. Innovative user-focused websites for organizations making a difference. Website Development and Design, Digital Strategy, Web Applications."
+    image=""
+>
+    <!-- <pre>{JSON.stringify(runtime.env)}</pre> -->
+    <section class="bg-[url('/images/Hero-Waves.png')] bg-contain bg-no-repeat z-20">
+        <div style={{ background: "linear-gradient(90deg, rgba(18,33,38,1) 0%, rgba(24,37,46,1) 25%, rgba(52,68,96,1) 54%, rgba(35,32,49,1) 77%, rgba(34,23,39,1) 100%)" }}>
+            <HeaderBanner />
+        </div>
+    </section>
+</Layout>

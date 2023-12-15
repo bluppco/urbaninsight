@@ -11,6 +11,7 @@ import Container from "../layouts/Container.astro"
 import "../styles/custom.css"
 
 // COMPONENTS
+import HeaderBanner from "../components/common/HeaderBanner.astro"
 import Header from "../components/Header"
 import Masthead from "../components/home/Masthead.astro"
 import OurApproach from "../components/home/OurApproach.astro"
@@ -31,6 +32,7 @@ const data = [ "Broad.jpg", "global.jpg", "GOODG.jpg" ]
     <!-- <pre>{JSON.stringify(runtime.env)}</pre> -->
     <section class="bg-[url('/images/Hero-Waves.png')] bg-contain bg-no-repeat z-20">
         <div style={{ background: "linear-gradient(90deg, rgba(18,33,38,1) 0%, rgba(24,37,46,1) 25%, rgba(52,68,96,1) 54%, rgba(35,32,49,1) 77%, rgba(34,23,39,1) 100%)" }}>
+            <HeaderBanner />
             <Header />
             <Masthead />
         </div>
