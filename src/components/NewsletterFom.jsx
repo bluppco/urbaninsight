@@ -2,7 +2,7 @@ const NewsletterForm = () => {
 
     return(
         <>
-            <input type="text" placeholder="Newsletter Signup" value="" className="p-2 rounded w-72 bg-urbaninsight_black text-urbaninsight_dark_gray text-center" name="name" />
+            <input type="text" placeholder="Newsletter Signup" value="" className="p-2 rounded w-72 bg-urbaninsight_black text-urbaninsight_dark_gray text-center" name="name" onChange={ ( event ) => console.log( event.target.value ) }/>
             <div className="flex items-center h-full absolute right-2 top-0">
                 <div className="w-5 aspect-square p-1 rounded-full bg-urbaninsight_red">
                     <img
