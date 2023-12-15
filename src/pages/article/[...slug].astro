@@ -1,0 +1,47 @@
+---
+import { endpointFetch } from "../../functions/endpoint"
+const runtime = Astro.locals.runtime;
+const endpoint = endpointFetch( runtime.env.ENVIRONMENT )
+const { slug } = Astro.params
+const data = await fetch( endpoint + "/article/" + slug )
+const data_json = await data.json()
+const article = data_json.data
+// console.log( data_json )
+
+// LAYOUTS
+import Layout from "../../layouts/Layout.astro"
+import Container from "../../layouts/Container.astro"
+
+// COMPONENTS
+import Header from "../../components/Header"
+import Footer from "../../components/Footer.astro"
+import ContactUs from "../../components/home/ContactUs.astro"
+import ArticleInfo from "../../components/articles/ArticleInfo.astro"
+import RecentArticles from "../../components/articles/RecentArticles.astro"
+---
+<Layout
+    title=""
+    description=""
+    image=""
+>
+    <Header />
+    <section class="container max-w-4xl mx-auto">
+        <ArticleInfo
+            date="February, 2023"
+            title={ article.title }
+            src="/images/Broad.jpg"
+            alt=""
+            name="Josh Skelly"
+            designation="Chief Executive Officer"
+            body={ article.md }
+        />
+    </section>
+    <section class="py-10">
+
+    </section>
+    <Container>
+        <RecentArticles />
+    </Container>
+    <ContactUs />
+    <Footer />
+</Layout>
