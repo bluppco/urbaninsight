@@ -1,0 +1,13 @@
+---
+// IMPORTING ATOMS
+import ArrowButton from "../../atoms/ArrowButton.astro"
+
+const { text, title, button_title } = Astro.props
+---
+<div class="flex flex-col gap-6 justify-between p-10 bg-gray-50 rounded-lg shadow-2xl shadow-urbaninsight_slate">
+    <p class="uppercase font-bold text-urbaninsight_light_gray font-open_sans">{ text }</p>
+    <p class="text-[28px] text-urbaninsight_black font-bold font-open_sans">{ title }</p>
+    <div class="pt-4">
+        <ArrowButton>{ button_title }</ArrowButton>
+    </div>
+</div>

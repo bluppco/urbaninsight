@@ -1,0 +1,35 @@
+---
+// IMPORTING ATOMS
+import H1 from "../../atoms/H1.astro"
+
+const {
+
+    date,
+    title,
+    src,
+    alt,
+    name,
+    designation
+
+} = Astro.props
+---
+<section class="space-y-10">
+    <div class="space-y-4">
+        <p class="text-lg text-urbaninsight_black font-open_sans font-semibold">{ date }</p>
+        <H1>{ title }</H1>
+    </div>
+    <div class="flex gap-8 items-center">
+        <div class="w-24 aspect-square bg-zinc-200 overflow-hidden rounded-full">
+            <img
+                src={ src }
+                alt={ alt }
+                class="w-20 aspect-square"
+            />
+        </div>
+        <div>
+            <p class="text-lg text-urbaninsight_black font-open_sans font-semibold">{ name }</p>
+            <p class="text-lg text-urbaninsight_black font-open_sans font-semibold">{ designation }</p>
+        </div>
+    </div>
+    <div class="h-[2px] bg-urbaninsight_red w-24"></div>
+</section>
