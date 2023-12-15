@@ -11,4 +11,13 @@
     overflow: inherit !important;
 }
 
+.marked p{
+
+    @apply text-xl my-2 text-[#5E6D89] font-open_sans !important;
+
+}
+.marked h2{
+
+    @apply text-5xl font-semibold text-[#30384C] font-open_sans mt-10 mb-6 !important;
+
 }
