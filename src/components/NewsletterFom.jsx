@@ -8,7 +8,7 @@ const NewsletterForm = () => {
                     <img
                         src="/icons/right_arrow_white.svg"
                         alt=""
-                        className="w-full h-full"
+                        className="w-5 aspect-square"
                     />
                 </div>
             </div>

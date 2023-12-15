@@ -1,0 +1,40 @@
+---
+// LAYOUTS
+import Layout from "../../layouts/Layout.astro"
+import Container from "../../layouts/Container.astro"
+
+// CUSTOM STYLES
+import "../../styles/custom.css"
+
+// COMPONENTS
+import Header from "../../components/Header"
+import Footer from "../../components/Footer.astro"
+import ContactUs from "../../components/home/ContactUs.astro"
+import ArticleInfo from "../../components/articles/ArticleInfo.astro"
+import RecentArticles from "../../components/articles/RecentArticles.astro"
+---
+<Layout
+    title=""
+    description=""
+    image=""
+>
+    <Header />
+    <section class="container max-w-4xl mx-auto">
+        <ArticleInfo
+            date="February, 2023"
+            title="How Tessitura Ticketing Software Helps Cultural Arts Organizations Increase Revenue"
+            src="/images/Broad.jpg"
+            alt=""
+            name="Josh Skelly"
+            designation="Chief Executive Officer"
+        />
+    </section>
+    <section class="py-10">
+
+    </section>
+    <Container>
+        <RecentArticles />
+    </Container>
+    <ContactUs />
+    <Footer />
+</Layout>

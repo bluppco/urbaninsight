@@ -17,7 +17,7 @@ export default {
 
 			fontFamily: {
 
-				"trumpsoftpro": [ "Trump Soft Pro", "sans-serif" ],
+				"trumpsoftpro": [ "trumpsoftpro", "sans-serif" ],
 				"open_sans": [ "Open Sans", "sans-serif" ]
 
 			},

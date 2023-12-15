@@ -2,7 +2,7 @@
 // import "../functions/Home.astro"
 const runtime = Astro.locals.runtime;
 
-console.log( runtime.env.ENVIRONMENT )
+// console.log( runtime.env.ENVIRONMENT )
 // LAYOUTS
 import Layout from "../layouts/Layout.astro"
 import Container from "../layouts/Container.astro"
@@ -28,10 +28,14 @@ const data = [ "Broad.jpg", "global.jpg", "GOODG.jpg" ]
     description="Web Development Agency. Innovative user-focused websites for organizations making a difference. Website Development and Design, Digital Strategy, Web Applications."
     image=""
 >
-<pre>{JSON.stringify(runtime.env)}</pre>
-    <Header />
+    <!-- <pre>{JSON.stringify(runtime.env)}</pre> -->
+    <section class="bg-[url('/images/Hero-Waves.png')] bg-contain bg-no-repeat z-20">
+        <div style={{ background: "linear-gradient(90deg, rgba(18,33,38,1) 0%, rgba(24,37,46,1) 25%, rgba(52,68,96,1) 54%, rgba(35,32,49,1) 77%, rgba(34,23,39,1) 100%)" }}>
+            <Header />
+            <Masthead />
+        </div>
+    </section>
     <section class="relative">
-        <Masthead />
         <OurApproach />
     </section>
     <SliderJSX data={ data } client:load />
