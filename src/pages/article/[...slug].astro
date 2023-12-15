@@ -8,6 +8,7 @@ const data_json = await data.json()
 const article = data_json.data
 // console.log( data_json )
 
+
 // LAYOUTS
 import Layout from "../../layouts/Layout.astro"
 import Container from "../../layouts/Container.astro"
@@ -18,6 +19,22 @@ import Footer from "../../components/Footer.astro"
 import ContactUs from "../../components/home/ContactUs.astro"
 import ArticleInfo from "../../components/articles/ArticleInfo.astro"
 import RecentArticles from "../../components/articles/RecentArticles.astro"
+
+if( data.status !== 200 ){
+
+    return Astro.redirect("/")
+
+}
+
+const articles = data_json.data
+
+// FIND THE SLUG
+// let article = articles.filter( ( res ) => res.slug === slug )
+// article = article[0]
+
+const content = article.md
+
+const html = marked.parse( content )
 ---
 <Layout
     title=""
@@ -26,19 +43,15 @@ import RecentArticles from "../../components/articles/RecentArticles.astro"
 >
     <Header />
     <section class="container max-w-4xl mx-auto">
-        <ArticleInfo
-            date="February, 2023"
-            title={ article.title }
-            src="/images/Broad.jpg"
-            alt=""
-            name="Josh Skelly"
-            designation="Chief Executive Officer"
-            body={ article.md }
-        />
-    </section>
-    <section class="py-10">
-
-    </section>
+    <ArticleInfo
+        date="February, 2023"
+        title={ articles.title }
+        src="/images/Broad.jpg"
+        alt=""
+        name="Josh Skelly"
+        designation="Chief Executive Officer"
+    />
+    <section set:html={ html } class="markdown pt-20 pb-28 font-open_sans" />
     <Container>
         <RecentArticles />
     </Container>
