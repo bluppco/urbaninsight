@@ -1,12 +1,13 @@
 ---
 import { endpointFetch } from "../../functions/endpoint"
+
 const runtime = Astro.locals.runtime;
 const endpoint = endpointFetch( runtime.env.ENVIRONMENT )
+
 const { slug } = Astro.params
 const data = await fetch( endpoint + "/article/" + slug )
 const data_json = await data.json()
 const article = data_json.data
-// console.log( data_json )
 
 // LAYOUTS
 import Layout from "../../layouts/Layout.astro"
@@ -18,39 +19,24 @@ import Footer from "../../components/Footer.astro"
 import ContactUs from "../../components/home/ContactUs.astro"
 import ArticleInfo from "../../components/articles/ArticleInfo.astro"
 import RecentArticles from "../../components/articles/RecentArticles.astro"
-
-if( data.status !== 200 ){
-
-    return Astro.redirect("/")
-
-}
-
-const articles = data_json.data
-
-// FIND THE SLUG
-// let article = articles.filter( ( res ) => res.slug === slug )
-// article = article[0]
-
-const content = article.md
-
-const html = marked.parse( content )
 ---
 <Layout
     title=""
     description=""
     image=""
 >
-    <Header dark={ true } />
-    <section class="container max-w-3xl mx-auto pt-20">
-    <ArticleInfo
-        date="February, 2023"
-        title={ article.title }
-        src="/images/Broad.jpg"
-        alt=""
-        name="Josh Skelly"
-        designation="Chief Executive Officer"
-    />
-    <section set:html={ html } class="markdown pt-20 pb-28 font-open_sans" />
+    <Header />
+    <section class="container max-w-4xl mx-auto">
+        <ArticleInfo
+            date="February, 2023"
+            title={ article.title }
+            src="/images/Broad.jpg"
+            alt=""
+            name="Josh Skelly"
+            designation="Chief Executive Officer"
+            body={ article.md }
+        />
+    </section>
     <Container>
         <RecentArticles />
     </Container>
