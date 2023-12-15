@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'Trump Soft Pro';
+    src: url('/fonts/TrumpSoftPro-Bold.eot');
+    src: local('Trump Soft Pro Bold'), local('TrumpSoftPro-Bold'),
+        url('TrumpSoftPro-Bold.eot?#iefix') format('embedded-opentype'),
+        url('TrumpSoftPro-Bold.woff2') format('woff2'),
+        url('TrumpSoftPro-Bold.woff') format('woff'),
+        url('TrumpSoftPro-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+.control-dots{
+    bottom: -100px !important;
+}
+.carousel .control-dots .dot{
+    background-color: #B1BECF !important;
+    box-shadow: none;
+    width: 10px;
+    height: 10px;
+}
+.carousel.carousel-slider{
+    overflow: inherit !important;
+}

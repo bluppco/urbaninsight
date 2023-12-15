@@ -1,0 +1,45 @@
+---
+// LAYOUTS
+import Container from "../layouts/Container.astro"
+
+// COMPONENTS
+import FooterSocialIcon from "./FooterSocialIcon.astro"
+import NewsletterForm from "./NewsletterFom"
+---
+
+<footer class="bg-urbaninsight_midnight_slate">
+    <Container>
+        <section class="grid grid-cols-2 py-12">
+            <div>
+                <p class="font-open_sans font-bold uppercase text-[22px] text-white cursor-pointer">Careers</p>
+                <p class="font-open_sans font-bold uppercase text-[22px] text-white cursor-pointer">Contact</p>
+            </div>
+            <div class="space-y-4">
+                <div class="relative flex justify-end">
+                    <NewsletterForm />
+                </div>
+                <div class="flex gap-4 justify-end items-center">
+                    <FooterSocialIcon
+                        href="https://www.facebook.com/UrbanInsightInc/"
+                        src="/icons/facebook.svg"
+                        alt=""
+                    />
+                    <a href="https://twitter.com/urbaninsight" target="_blank">
+                        <div class="w-4 aspect-square">
+                            <img
+                                src="/icons/x.svg"
+                                alt=""
+                                class="w-full h-full"
+                            />
+                        </div>
+                    </a>
+                    <FooterSocialIcon
+                        href="https://www.linkedin.com/company/urban-insight"
+                        src="/icons/linkedin.svg"
+                        alt=""
+                    />
+                </div>
+            </div>
+        </section>
+    </Container>
+</footer>
