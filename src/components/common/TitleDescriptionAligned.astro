@@ -1,0 +1,9 @@
+---
+import H3 from "../../atoms/H3.astro"
+
+const { title, description } = Astro.props
+---
+<div class="flex gap-16 container max-w-3xl">
+    <H3 leading={ true }>{ title }</H3>
+    <p class="text-lg font-open_sans text-urbaninsight_slate">{ description }</p>
+</div>

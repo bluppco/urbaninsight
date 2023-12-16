@@ -5,7 +5,7 @@ const SliderJSX = ( props ) => {
     const { data } = props
 
     return (
-        <section className="w-full relative mt-[600px] mb-60 flex gap-40 overflow-x-scroll">
+        <section className="w-full relative flex gap-40 overflow-x-scroll">
             <div className="w-[600px] aspect-[3/2] rounded-xl overflow-hidden mx-auto shadow-2xl shadow-urbaninsight_black hover:">
                 <img
                     src="/images/Broad.jpg"

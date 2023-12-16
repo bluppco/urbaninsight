@@ -1,0 +1,56 @@
+---
+import { endpointFetch } from "../../functions/endpoint"
+
+const runtime = Astro.locals.runtime;
+const endpoint = endpointFetch( runtime.env.ENVIRONMENT )
+
+const { slug } = Astro.params
+
+const data = await fetch( endpoint + "/work/" + slug )
+const data_json = await data.json()
+const project = data_json.data
+
+// LAYOUTS
+import Layout from "../../layouts/Layout.astro"
+import Container from "../../layouts/Container.astro"
+
+// COMPONENTS
+import Header from "../../components/Header"
+import Footer from "../../components/Footer.astro"
+import ContactUs from "../../components/home/ContactUs.astro"
+import SliderJSX from "../../components/home/Slider"
+import Masthead from "../../components/project/Masthead.astro"
+import Project from "../../components/project/Project.astro"
+
+// ATOMS
+import H3 from "../../atoms/H3.astro"
+---
+<Layout
+    title=""
+    description=""
+    image=""
+>
+    <section class="h-screen max-h-screen bg-urbaninsight_red">
+        <Header />
+        <Container>
+            <Masthead
+                title={ project.title }
+                description={ project.description }
+                text={ project.tags }
+                src=""
+                alt=""
+            />
+        </Container>
+    </section>
+    <Container>
+        <Project data={ project } />
+    </Container>
+    <section class="py-20">
+        <H3 center={ true }>Other Recent Projects</H3>
+        <div class="pt-14">
+            <SliderJSX client:load />
+        </div>
+    </section>
+    <ContactUs />
+    <Footer />
+</Layout>

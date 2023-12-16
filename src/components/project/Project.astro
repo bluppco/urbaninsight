@@ -1,0 +1,33 @@
+---
+import TitleDescriptionAligned from "../common/TitleDescriptionAligned.astro"
+import ServicesProvided from "./ServicesProvided.astro"
+
+const { data } = Astro.props
+---
+<section class="flex flex-col gap-32 py-20 pl-32">
+    <div class="grid grid-cols-5 gap-4">
+        <div class="col-span-4">
+            <TitleDescriptionAligned
+                title="Background"
+                description={ data.background }
+            />
+        </div>
+        <ServicesProvided
+            title={[
+
+                "Drupal",
+                "Visual Design",
+                "Responsive Design"
+
+            ]}
+        />
+    </div>
+    <TitleDescriptionAligned
+        title="The Challenge"
+        description={ data.the_challenge }
+    />
+    <TitleDescriptionAligned
+        title="The Solution"
+        description={ data.the_solution }
+    />
+</section>
