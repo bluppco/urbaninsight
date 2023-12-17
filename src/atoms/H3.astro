@@ -1,0 +1,13 @@
+---
+const {
+
+    right,
+    leading,
+    center,
+    light
+
+} = Astro.props
+---
+<h3 class={` ${ center ? "text-center" : "" } ${ light ? "text-white" : "" } ${ right ? "text-right" : "text-left" } ${ leading ? "leading-snug" : "leading-[56px]" } font-trumpsoftpro text-[34px] text-urbaninsight_black uppercase`}>
+    <slot />
+</h3>

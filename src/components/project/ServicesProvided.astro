@@ -1,0 +1,19 @@
+---
+const { title } = Astro.props
+---
+<div>
+    <p class="text-urbaninsight_midnight_slate uppercase font-open_sans font-bold text-sm tracking-widest">Services Provided</p>
+    <ul class="pt-4 space-y-2">
+        {
+
+            title.map( ( item ) => {
+
+                return(
+                    <li class="font-open_sans font-bold text-urbaninsight_light_gray">{ item }</li>
+                )
+
+            })
+
+        }
+    </ul>
+</div>

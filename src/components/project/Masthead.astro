@@ -1,0 +1,40 @@
+---
+// IMPORTING ATOMS
+import H2 from "../../atoms/H2.astro"
+
+const {
+
+    title,
+    description,
+    text,
+    src,
+    alt
+
+} = Astro.props
+---
+<section class="flex gap-20 items-center pt-40">
+    <div class="space-y-6 pl-36">
+        <div class="flex gap-2">
+        {
+
+            text.map( ( item ) => {
+
+                return(
+                    <p class="font-open_sans uppercase font-bold text-white">{ item }</p>
+                )
+
+            })
+
+        }
+        </div>
+        <H2 light={ true }>{ title }</H2>
+        <p class="text-lg font-open_sans text-white">{ description }</p>
+    </div>
+    <div class="w-full aspect-video bg-zinc-200 overflow-hidden">
+        <img
+            src={ src }
+            alt={ alt }
+            class="w-full aspect-video"
+        />
+    </div>
+</section>
