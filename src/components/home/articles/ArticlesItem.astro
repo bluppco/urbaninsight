@@ -5,10 +5,10 @@ const { heading, title, href } = Astro.props
 ---
 <div>
     <p class="uppercase font-bold text-urbaninsight_light_gray font-open_sans">{ heading }</p>
-    <a href={ href }>
+    <a href={ "/article/" + href }>
         <p class="text-[28px] text-urbaninsight_black font-bold font-open_sans leading-tight">{ title }</p>
     </a>
     <div class="pt-1">
-        <ArrowButton>Read More</ArrowButton>
+        <ArrowButton href={ "/article/" + href }>Read More</ArrowButton>
     </div>
 </div>

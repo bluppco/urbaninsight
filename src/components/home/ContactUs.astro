@@ -1,13 +1,14 @@
 ---
 // ATOMS
 import Button from "../../atoms/Button.astro"
+
+const { data } = Astro.props
 ---
 <section class="py-20 bg-gradient-to-r from-urbaninsight_blue to-urbaninsight_dark_blue">
     <div class="flex flex-col items-center gap-12">
-        <h2 class="text-white font-open_sans text-[34px] font-bold tracking-wide leading-tight">
-            Do You Have a Project?<br/>
-            Let’s Build It Together.
-        </h2>
+        <div class="w-[30%]">
+            <h2 class="text-white font-open_sans text-[34px] font-bold tracking-wide leading-tight">{ data.title }</h2>
+        </div>
         <Button>Contact Us</Button>
     </div>
 </section>

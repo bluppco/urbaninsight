@@ -1,26 +1,57 @@
+---
+// IMPORTING CONSTANTS
+import { CDN_LINK, IMAGE_QUALITY } from "../../constants/cdn"
+
+const { data } = Astro.props
+---
 <section class="h-[1080px] relative z-30">
     <div class="pt-[66px] pl-[120px]">
-        <p class="text-[78px] uppercase text-white font-trumpsoftpro font-bold leading-none">Websites that work,<br/>For organizations that<br/>Make a difference</p>
+        <div class="w-[45%]">
+            <p class="text-[78px] uppercase text-white font-trumpsoftpro font-bold leading-none">{ data.title }</p>
+        </div>
     </div>
-    <div class="w-[460px] absolute bottom-44 -left-8">
-        <img
-            src="/images/Hero-ipad.png"
-            alt=""
-            class="w-full h-full"
-        />
-    </div>
-    <div class="w-[360px] absolute bottom-36 left-[600px]">
-        <img
-            src="/images/Hero-iphone.png"
-            alt=""
-            class="w-full h-full"
-        />
-    </div>
-    <div class="w-[460px] absolute top-6 right-10">
-        <img
-            src="/images/Hero-laptop.png"
-            alt=""
-            class="w-full h-full"
-        />
-    </div>
+    {
+
+        data.images.map( ( item ) => {
+
+            if ( item.order === 0 )
+
+            return(
+                <div class="w-[460px] absolute bottom-44 -left-8">
+                    <img
+                        src={ CDN_LINK + item.file + "?quality=" + IMAGE_QUALITY }
+                        alt=""
+                        class="w-full h-full"
+                    />
+                </div>
+            )
+
+            else if ( item.order === 1 )
+
+            return(
+                <div class="w-[360px] absolute bottom-36 left-[600px]">
+                    <img
+                        src={ CDN_LINK + item.file + "?quality=" + IMAGE_QUALITY }
+                        alt=""
+                        class="w-full h-full"
+                    />
+                </div>
+            )
+
+            else
+
+            return(
+                <div class="w-[460px] absolute top-6 right-10">
+                    <img
+                        src={ CDN_LINK + item.file + "?quality=" + IMAGE_QUALITY }
+                        alt=""
+                        class="w-full h-full"
+                    />
+                </div>
+            )
+
+
+        })
+
+    }
 </section>

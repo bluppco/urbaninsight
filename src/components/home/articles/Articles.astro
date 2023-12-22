@@ -1,32 +1,36 @@
 ---
+// IMPORTING ATOMS
 import ArrowButton from "../../../atoms/ArrowButton.astro"
-import ArticlesItem from "./ArticlesItem.astro"
----
 
+// IMPORTING COMPONENTS
+import ArticlesItem from "./ArticlesItem.astro"
+
+const { data, article_data } = Astro.props
+---
 <section class="grid grid-cols-5 gap-20 max-w-5xl mx-auto pb-32 relative">
     <div class="col-span-2 flex flex-col justify-between p-10 bg-gray-50 rounded-lg shadow-2xl shadow-urbaninsight_slate">
         <div class="space-y-8">
-            <p class="uppercase font-bold text-urbaninsight_light_gray font-open_sans">Web Development</p>
-            <p class="text-[28px] text-urbaninsight_black font-bold font-open_sans">The Model Website Redesign RFP Template</p>
+            <p class="uppercase font-bold text-urbaninsight_light_gray font-open_sans">{ data.name }</p>
+            <p class="text-[28px] text-urbaninsight_black font-bold font-open_sans">{ data.title }</p>
         </div>
         <ArrowButton>Read More</ArrowButton>
     </div>
     <div class="col-span-3 space-y-14 py-10 pr-20">
-        <ArticlesItem
-            heading="Drupal"
-            title="Drupal Migration Services: Must Knows"
-            href=""
-        />
-        <ArticlesItem
-            heading="Drupal"
-            title="Evaluating Drupal Pros and Cons: Is It the Ideal CMS for Your Website?"
-            href=""
-        />
-        <ArticlesItem
-            heading="Drupal"
-            title="Drupal Website Audit: A Checklist"
-            href=""
-        />
+        {
+
+            article_data.map( ( item ) => {
+
+                return(
+                    <ArticlesItem
+                        heading="Drupal"
+                        title={ item.title }
+                        href={ item.slug }
+                    />
+                )
+
+            })
+
+        }
     </div>
 </section>
 <div class="flex items-center gap-4">
