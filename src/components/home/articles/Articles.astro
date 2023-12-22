@@ -7,8 +7,8 @@ import ArticlesItem from "./ArticlesItem.astro"
 
 const { data, article_data } = Astro.props
 ---
-<section class="grid grid-cols-5 gap-20 max-w-5xl mx-auto pb-32 relative">
-    <div class="col-span-2 flex flex-col justify-between p-10 bg-gray-50 rounded-lg shadow-2xl shadow-urbaninsight_slate">
+<section class="grid md:grid-cols-5 md:gap-20 max-w-5xl mx-auto pb-32 relative">
+    <div class="md:col-span-2 flex flex-col justify-between p-10 bg-gray-50 rounded-lg shadow-2xl shadow-urbaninsight_slate">
         <div class="space-y-8">
             <p class="uppercase font-bold text-urbaninsight_light_gray font-open_sans">{ data.name }</p>
             <p class="text-[28px] text-urbaninsight_black font-bold font-open_sans">{ data.title }</p>
@@ -34,7 +34,7 @@ const { data, article_data } = Astro.props
     </div>
 </section>
 <div class="flex items-center gap-4">
-    <div class="bg-urbaninsight_light_gray h-[1px] w-[1020px] ml-32 text-sm"></div>
+    <div class="bg-urbaninsight_light_gray h-[1px] w-[50%] md:w-[1020px] md:ml-32 text-sm"></div>
     <div class="flex gap-1 items-center group cursor-pointer">
         <div class="font-open_sans font-bold text-urbaninsight_light_gray uppercase">View all articles</div>
         <div class="group-hover:ml-2 transition-all duration-300">

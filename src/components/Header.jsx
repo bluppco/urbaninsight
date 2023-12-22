@@ -6,7 +6,7 @@ const Header = ( props ) => {
     const { dark } = props
 
     return(
-        <header className="h-[136px] flex items-center top-0 w-full z-50">
+        <header className="hidden md:flex items-center h-[136px] top-0 w-full z-50">
             <ContainerJSX>
                 <nav className="flex items-center justify-between">
                     <div className={` ${ dark ? "hidden" : "block" } w-64 aspect-video`}>
