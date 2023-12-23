@@ -1,4 +1,46 @@
 ---
+import { endpointFetch } from "../functions/endpoint"
+
+const runtime = Astro.locals.runtime;
+const endpoint = endpointFetch( runtime.env.ENVIRONMENT )
+
+// NETWORK CALL TO GET DATA
+const network_data = await fetch( endpoint + "/home" )
+const data_json = await network_data.json()
+
+const { data } = data_json.data
+
+// HOME PROPS
+let masthead = null
+let our_approach = null
+let industry_expertise = null
+let web_development = null
+let clients = null
+let contact_us = null
+
+data.map( ( data ) => {
+
+	if( data.slug === "masthead" )
+        masthead = data
+    else if( data.slug === "our-approach" )
+        our_approach = data
+	else if ( data.slug === "industry-expertise" )
+        industry_expertise = data
+    else if ( data.slug === "web-development" )
+        web_development = data
+    else if ( data.slug === "clients" )
+        clients = data
+    else if ( data.slug === "contact-us" )
+        contact_us = data
+
+})
+
+const article_data = await fetch( endpoint + "/articles" )
+const article_data_json = await article_data.json()
+
+const articles = article_data_json.data
+
+
 // LAYOUTS
 import Layout from "../layouts/Layout.astro"
 import Container from "../layouts/Container.astro"
@@ -18,7 +60,7 @@ import Footer from "../components/Footer.astro"
 import ContactUs from "../components/home/ContactUs.astro"
 import Articles from "../components/home/articles/Articles.astro"
 
-const data = [ "Broad.jpg", "global.jpg", "GOODG.jpg" ]
+// const data = [ "Broad.jpg", "global.jpg", "GOODG.jpg" ]
 ---
 <Layout
     title="Top Rated Web Development Agency | Urban Insight"
@@ -30,18 +72,18 @@ const data = [ "Broad.jpg", "global.jpg", "GOODG.jpg" ]
         <div style={{ background: "linear-gradient(90deg, rgba(18,33,38,1) 0%, rgba(24,37,46,1) 25%, rgba(52,68,96,1) 54%, rgba(35,32,49,1) 77%, rgba(34,23,39,1) 100%)" }}>
             <HeaderBanner />
             <Header />
-            <Masthead />
+            <Masthead data={ masthead } />
         </div>
     </section>
     <section class="relative">
-        <OurApproach />
+        <OurApproach data={ our_approach } />
     </section>
-    <section class="mt-[600px] mb-60">
+    <section class="md:mt-[600px] md:mb-60 py-4">
         <SliderJSX data={ data } client:load />
     </section>
-    <IndustryExpertise />
-    <Articles />
-    <Clients />
-    <ContactUs />
+    <IndustryExpertise data={ industry_expertise } />
+    <Articles data={ web_development } article_data={ articles } />
+    <Clients data={ clients } />
+    <ContactUs data={ contact_us } />
     <Footer />
 </Layout>

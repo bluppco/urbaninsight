@@ -1,4 +1,4 @@
-export const CDN_LINK = "https://blupp.b-cdn.net/urbaninsight/"
+export const CDN_LINK = "https://blupp.b-cdn.net/urbaninsights/"
 export const IMAGE_QUALITY = 80
 export const IMAGE_QUALITY_60 = 60
 export const IMAGE_WIDTH_600 = 600
