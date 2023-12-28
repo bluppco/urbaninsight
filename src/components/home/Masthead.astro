@@ -4,13 +4,13 @@ import { CDN_LINK, IMAGE_QUALITY } from "../../constants/cdn"
 
 const { data } = Astro.props
 ---
-<section class="h-[1080px] relative z-30">
+<section class="h-[1080px] relative z-20">
     <div class="pt-20 md:pt-48 md:pl-[120px]">
         <div class="md:w-[45%] p-20 md:p-0">
             <p class="text-[50px] md:text-[78px] text-center md:text-left uppercase text-white font-trumpsoftpro font-bold leading-none">{ data.title }</p>
         </div>
     </div>
-    <div class="hidden md:block">
+    <div class="hidden md:block z-40">
         {
 
             data.images.map( ( item ) => {
